@@ -48,6 +48,7 @@ frame:SetScript('OnEvent', frame.OnEvent)
 SLASH_EXT1, SLASH_EXT2, SLASH_EXT3 = '/xptrack', '/ext', '/xp';
 local function handler(msg, editBox)
     local minutesToRetreive
+    
     if msg == '' then
         minutesToRetreive = 60
     elseif msg == 'reset' then
