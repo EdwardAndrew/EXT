@@ -52,6 +52,7 @@ local function handler(msg, editBox)
         minutesToRetreive = 60
     elseif msg == 'reset' then
         TrackedXP = {}
+		return
     else
         minutesToRetreive = tonumber(msg)
     end
