@@ -67,9 +67,11 @@ local function handler(msg, editBox)
     for i = 0, minutesToRetreive, 1 do
         local index = date('%Y-%m-%dT%H:%M', time() - (i * 60))
         if not (TrackedXP[index] == nil) then
-            earliest['XP'] = TrackedXP[index]['X']
-            earliest['Level'] = TrackedXP[index]['L']
-            earliest['Time'] = TrackedXP[index]['T']
+            if not (TrackedXP[index]['X'] == 'nan()') then
+                earliest['XP'] = TrackedXP[index]['X']
+                earliest['Level'] = TrackedXP[index]['L']
+                earliest['Time'] = TrackedXP[index]['T']
+            end 
         end
     end
 
